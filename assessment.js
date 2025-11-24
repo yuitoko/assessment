@@ -53,12 +53,15 @@ assessmentButton.addEventListener(
     anchor.setAttribute('data-lang', 'ja');
     anchor.setAttribute('data-show-count', 'false');
     anchor.innerText = 'Tweet #あなたのいいところ';
-
     tweetDivision.appendChild(anchor);
 
     const script = document.createElement('script');
     script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
     tweetDivision.appendChild(script);
+
+    const notes = document.createElement('p');
+    notes.innerHTML = '<small>※Xの投稿画面で、余分な「#」が表示された場合は削除してください</small>';
+    tweetDivision.appendChild(notes);
   }
 );
 
@@ -162,5 +165,6 @@ function test() {
 
   console.log('同じ名前なら、同じ結果を出力することのテスト終了');
 }
+
 
 test();
